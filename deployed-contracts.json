@@ -1,0 +1,88 @@
+{
+  "MintableErc20": {
+    "hardhat": {
+      "address": "0x7c2C195CD6D34B8F845992d380aADB2730bB9C6F",
+      "deployer": "0xc783df8a850f42e7F7e57013759C285caa701eB6"
+    },
+    "localhost": {
+      "address": "0xDAAB4b953C7519D111cfcCFd2a3C4C23D9d2F66c",
+      "deployer": "0xADa15E9b2e5b24Dfd462F0095b58B44400B32Af4"
+    }
+  },
+  "InitializableAdminUpgradeabilityProxy": {
+    "hardhat": {
+      "address": "0xD6C850aeBFDC46D7F4c207e445cC0d6B0919BDBe",
+      "deployer": "0xc783df8a850f42e7F7e57013759C285caa701eB6"
+    },
+    "localhost": {
+      "address": "0x31b93bCfB1Be5ea30C945d0e7ed462DFf05a9749",
+      "deployer": "0xADa15E9b2e5b24Dfd462F0095b58B44400B32Af4"
+    }
+  },
+  "AaveIncentivesController": {
+    "hardhat": {
+      "address": "0x7e35Eaf7e8FBd7887ad538D4A38Df5BbD073814a",
+      "deployer": "0xc783df8a850f42e7F7e57013759C285caa701eB6"
+    },
+    "localhost": {
+      "address": "0x499effB8e9CcCF0FC6f5439637c2f21Eaf7D1A5a",
+      "deployer": "0xADa15E9b2e5b24Dfd462F0095b58B44400B32Af4"
+    }
+  },
+  "SvLaunch": {
+    "hardhat": {
+      "address": "0xD6C850aeBFDC46D7F4c207e445cC0d6B0919BDBe"
+    },
+    "localhost": {
+      "address": "0x31b93bCfB1Be5ea30C945d0e7ed462DFf05a9749"
+    }
+  },
+  "MockTransferHook": {
+    "hardhat": {
+      "address": "0x20Ce94F404343aD2752A2D01b43fa407db9E0D00",
+      "deployer": "0xc783df8a850f42e7F7e57013759C285caa701eB6"
+    },
+    "localhost": {
+      "address": "0xc296813439AC595b7CDCe5A747b3C562D5965971",
+      "deployer": "0xADa15E9b2e5b24Dfd462F0095b58B44400B32Af4"
+    }
+  },
+  "StakedAaveV2": {
+    "hardhat": {
+      "address": "0x0078371BDeDE8aAc7DeBfFf451B74c5EDB385Af7"
+    },
+    "localhost": {
+      "address": "0x867D89be3b6B14AEA1f64A5a4922d92D8B883f97"
+    }
+  },
+  "ATokenMock-aDai": {
+    "hardhat": {
+      "address": "0x52d3b94181f8654db2530b0fEe1B19173f519C52",
+      "deployer": "0xc783df8a850f42e7F7e57013759C285caa701eB6"
+    },
+    "localhost": {
+      "address": "0x02262904134Be19e6B385846C5De55E0b5cD1885",
+      "deployer": "0xADa15E9b2e5b24Dfd462F0095b58B44400B32Af4"
+    }
+  },
+  "ATokenMock-aWeth": {
+    "hardhat": {
+      "address": "0xd15468525c35BDBC1eD8F2e09A00F8a173437f2f",
+      "deployer": "0xc783df8a850f42e7F7e57013759C285caa701eB6"
+    },
+    "localhost": {
+      "address": "0x96a975cE4220204C5c3077f29dA363fE655c0136",
+      "deployer": "0xADa15E9b2e5b24Dfd462F0095b58B44400B32Af4"
+    }
+  },
+  "DoubleTransferHelper": {
+    "hardhat": {
+      "address": "0x7e35Eaf7e8FBd7887ad538D4A38Df5BbD073814a",
+      "deployer": "0xc783df8a850f42e7F7e57013759C285caa701eB6"
+    },
+    "localhost": {
+      "address": "0x499effB8e9CcCF0FC6f5439637c2f21Eaf7D1A5a",
+      "deployer": "0xADa15E9b2e5b24Dfd462F0095b58B44400B32Af4"
+    }
+  }
+}
