@@ -11,7 +11,7 @@
   },
   "InitializableAdminUpgradeabilityProxy": {
     "hardhat": {
-      "address": "0xD6C850aeBFDC46D7F4c207e445cC0d6B0919BDBe",
+      "address": "0x8858eeB3DfffA017D4BCE9801D340D36Cf895CCf",
       "deployer": "0xc783df8a850f42e7F7e57013759C285caa701eB6"
     },
     "localhost": {
@@ -31,7 +31,7 @@
   },
   "SvLaunch": {
     "hardhat": {
-      "address": "0xD6C850aeBFDC46D7F4c207e445cC0d6B0919BDBe"
+      "address": "0x8858eeB3DfffA017D4BCE9801D340D36Cf895CCf"
     },
     "localhost": {
       "address": "0x31b93bCfB1Be5ea30C945d0e7ed462DFf05a9749"
@@ -39,7 +39,7 @@
   },
   "MockTransferHook": {
     "hardhat": {
-      "address": "0x20Ce94F404343aD2752A2D01b43fa407db9E0D00",
+      "address": "0xf4e77E5Da47AC3125140c470c71cBca77B5c638c",
       "deployer": "0xc783df8a850f42e7F7e57013759C285caa701eB6"
     },
     "localhost": {

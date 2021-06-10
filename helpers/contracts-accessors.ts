@@ -6,7 +6,7 @@ import {
 import { eContractid, tEthereumAddress } from "./types";
 import { MintableErc20 } from "../types/MintableErc20";
 import { SvLaunch } from "../types/SvLaunch";
-import { StakedAaveV2 } from "../types/StakedAaveV2";
+//import { StakedAaveV2 } from "../types/StakedAaveV2";
 import { IcrpFactory } from "../types/IcrpFactory"; // Configurable right pool factory
 import { IConfigurableRightsPool } from "../types/IConfigurableRightsPool";
 import { IControllerAaveEcosystemReserve } from "../types/IControllerAaveEcosystemReserve";
@@ -63,43 +63,43 @@ export const deployStakedAave = async (
   return instance;
 };
 
-export const deployStakedAaveV2 = async (
-  [
-    stakedToken,
-    rewardsToken,
-    cooldownSeconds,
-    unstakeWindow,
-    rewardsVault,
-    emissionManager,
-    distributionDuration,
-  ]: [
-    tEthereumAddress,
-    tEthereumAddress,
-    string,
-    string,
-    tEthereumAddress,
-    tEthereumAddress,
-    string
-  ],
-  verify?: boolean
-) => {
-  const id = eContractid.StakedAaveV2;
-  const args: string[] = [
-    stakedToken,
-    rewardsToken,
-    cooldownSeconds,
-    unstakeWindow,
-    rewardsVault,
-    emissionManager,
-    distributionDuration,
-    ZERO_ADDRESS, // gov address
-  ];
-  const instance = await deployContract<StakedAaveV2>(id, args);
-  if (verify) {
-    await verifyContract(instance.address, args);
-  }
-  return instance;
-};
+// export const deployStakedAaveV2 = async (
+//   [
+//     stakedToken,
+//     rewardsToken,
+//     cooldownSeconds,
+//     unstakeWindow,
+//     rewardsVault,
+//     emissionManager,
+//     distributionDuration,
+//   ]: [
+//     tEthereumAddress,
+//     tEthereumAddress,
+//     string,
+//     string,
+//     tEthereumAddress,
+//     tEthereumAddress,
+//     string
+//   ],
+//   verify?: boolean
+// ) => {
+//   const id = eContractid.StakedAaveV2;
+//   const args: string[] = [
+//     stakedToken,
+//     rewardsToken,
+//     cooldownSeconds,
+//     unstakeWindow,
+//     rewardsVault,
+//     emissionManager,
+//     distributionDuration,
+//     ZERO_ADDRESS, // gov address
+//   ];
+//   const instance = await deployContract<StakedAaveV2>(id, args);
+//   if (verify) {
+//     await verifyContract(instance.address, args);
+//   }
+//   return instance;
+// };
 
 export const deployStakedTokenV2 = async (
   [
@@ -296,9 +296,9 @@ export const getMintableErc20 = getContractFactory<MintableErc20>(
 export const getStakedAave = getContractFactory<SvLaunch>(
   eContractid.StakedAave
 );
-export const getStakedAaveV2 = getContractFactory<StakedAaveV2>(
-  eContractid.StakedAaveV2
-);
+// export const getStakedAaveV2 = getContractFactory<StakedAaveV2>(
+//   eContractid.StakedAaveV2
+// );
 
 export const getStakedAaveProxy = async (address?: tEthereumAddress) => {
   return await getContract<InitializableAdminUpgradeabilityProxy>(

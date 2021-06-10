@@ -1,8 +1,8 @@
 import { BigNumber } from "ethers";
 import { AaveDistributionManager } from "../../../types/AaveDistributionManager";
 import { SvLaunch } from "../../../types/SvLaunch";
-import { AaveIncentivesController } from "../../../types/AaveIncentivesController";
-import { StakedAaveV2 } from "../../../types/StakedAaveV2";
+//import { AaveIncentivesController } from "../../../types/AaveIncentivesController";
+//import { StakedAaveV2 } from "../../../types/StakedAaveV2";
 
 export type UserStakeInput = {
   underlyingAsset: string;
@@ -16,9 +16,9 @@ export type UserPositionUpdate = UserStakeInput & {
 export async function getUserIndex(
   distributionManager:
     | AaveDistributionManager
-    | AaveIncentivesController
-    | SvLaunch
-    | StakedAaveV2,
+    //| AaveIncentivesController
+    | SvLaunch,
+   // | StakedAaveV2,
   user: string,
   asset: string
 ): Promise<BigNumber> {

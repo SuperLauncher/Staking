@@ -6,7 +6,7 @@ import {
 import { getNormalizedDistribution } from "../../helpers/ray-math";
 import { AaveDistributionManager } from "../../../types/AaveDistributionManager";
 import { SvLaunch } from "../../../types/SvLaunch";
-import { AaveIncentivesController } from "../../../types/AaveIncentivesController";
+//import { AaveIncentivesController } from "../../../types/AaveIncentivesController";
 
 export type AssetUpdateData = {
   emissionPerSecond: BigNumberish;
@@ -22,7 +22,7 @@ export type AssetData = {
 export async function getAssetsData<T extends { underlyingAsset: string }>(
   peiContract:
     | AaveDistributionManager
-    | AaveIncentivesController
+   // | AaveIncentivesController
     | SvLaunch,
   assets: T[]
 ) {

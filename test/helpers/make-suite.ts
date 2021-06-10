@@ -8,13 +8,13 @@ import chai from "chai";
 import bignumberChai from "chai-bignumber";
 import { SvLaunch } from "../../types/SvLaunch";
 import {
-  getAaveIncentivesController,
+ // getAaveIncentivesController,
   getATokenMock,
   getMintableErc20,
   getStakedAave,
-  getStakedAaveV2,
+  //getStakedAaveV2,
 } from "../../helpers/contracts-accessors";
-import { AaveIncentivesController } from "../../types/AaveIncentivesController";
+//import { AaveIncentivesController } from "../../types/AaveIncentivesController";
 import { MintableErc20 } from "../../types/MintableErc20";
 import { ATokenMock } from "../../types/ATokenMock";
 import { StakedAaveV2 } from "../../types/StakedAaveV2";
@@ -36,7 +36,7 @@ export interface TestEnv {
   deployer: SignerWithAddress;
   users: SignerWithAddress[];
   aaveToken: MintableErc20;
-  aaveIncentivesController: AaveIncentivesController;
+  //aaveIncentivesController: AaveIncentivesController;
   stakedAave: SvLaunch;
   aDaiMock: ATokenMock;
   aWethMock: ATokenMock;
@@ -54,8 +54,8 @@ const testEnv: TestEnv = {
   users: [] as SignerWithAddress[],
   aaveToken: {} as MintableErc20,
   stakedAave: {} as SvLaunch,
-  stakedAaveV2: {} as StakedAaveV2,
-  aaveIncentivesController: {} as AaveIncentivesController,
+  //stakedAaveV2: {} as StakedAaveV2,
+  //aaveIncentivesController: {} as AaveIncentivesController,
   aDaiMock: {} as ATokenMock,
   aWethMock: {} as ATokenMock,
 } as TestEnv;
@@ -81,8 +81,8 @@ export async function initializeMakeSuite() {
   testEnv.deployer = deployer;
   testEnv.rewardsVault = rewardsVault;
   testEnv.stakedAave = await getStakedAave();
-  testEnv.stakedAaveV2 = await getStakedAaveV2();
-  testEnv.aaveIncentivesController = await getAaveIncentivesController();
+  //testEnv.stakedAaveV2 = await getStakedAaveV2();
+  //testEnv.aaveIncentivesController = await getAaveIncentivesController();
   testEnv.aaveToken = await getMintableErc20();
   testEnv.aDaiMock = await getATokenMock({ slug: "aDai" });
   testEnv.aWethMock = await getATokenMock({ slug: "aWeth" });

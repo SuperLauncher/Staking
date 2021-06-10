@@ -38,15 +38,15 @@ const buildTestEnv = async (deployer: Signer, vaultOfRewards: Signer, restWallet
 
   await testDeployAaveStakeV2(aaveToken, deployer, vaultOfRewards, restWallets);
 
-  const { aaveIncentivesControllerProxy } = await testDeployAaveStakeV1(
-    aaveToken,
-    deployer,
-    vaultOfRewards,
-    restWallets
-  );
+  // const { aaveIncentivesControllerProxy } = await testDeployAaveStakeV1(
+  //   aaveToken,
+  //   deployer,
+  //   vaultOfRewards,
+  //   restWallets
+  // );
 
-  await deployATokenMock(aaveIncentivesControllerProxy.address, 'aDai');
-  await deployATokenMock(aaveIncentivesControllerProxy.address, 'aWeth');
+  // await deployATokenMock(aaveIncentivesControllerProxy.address, 'aDai');
+  // await deployATokenMock(aaveIncentivesControllerProxy.address, 'aWeth');
 
   console.timeEnd('setup');
 };

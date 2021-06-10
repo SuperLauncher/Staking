@@ -10,10 +10,10 @@ import {
 } from '../../helpers/constants';
 import {
   deployInitializableAdminUpgradeabilityProxy,
-  deployAaveIncentivesController,
+  //deployAaveIncentivesController,
   deployStakedAave,
   deployMockTransferHook,
-  deployStakedAaveV2,
+  //deployStakedAaveV2,
 } from '../../helpers/contracts-accessors';
 import { insertContractAddressInDb } from '../../helpers/contracts-helpers';
 import { waitForTx } from '../../helpers/misc-utils';
@@ -34,17 +34,17 @@ export const testDeployAaveStakeV1 = async (
 
   const vaultOfRewardsAddress = await vaultOfRewards.getAddress();
 
-  const aaveIncentivesControllerProxy = await deployInitializableAdminUpgradeabilityProxy();
+  //const aaveIncentivesControllerProxy = await deployInitializableAdminUpgradeabilityProxy();
   const stakedAaveProxy = await deployInitializableAdminUpgradeabilityProxy();
 
-  const aaveIncentivesControllerImplementation = await deployAaveIncentivesController([
-    aaveToken.address,
-    vaultOfRewardsAddress,
-    stakedAaveProxy.address,
-    PSM_STAKER_PREMIUM,
-    emissionManager,
-    (1000 * 60 * 60).toString(),
-  ]);
+  // const aaveIncentivesControllerImplementation = await deployAaveIncentivesController([
+  //   aaveToken.address,
+  //   vaultOfRewardsAddress,
+  //   stakedAaveProxy.address,
+  //   PSM_STAKER_PREMIUM,
+  //   emissionManager,
+  //   (1000 * 60 * 60).toString(),
+  // ]);
 
   const stakedAaveImpl = await deployStakedAave([
     stakedToken,
@@ -74,26 +74,26 @@ export const testDeployAaveStakeV1 = async (
   );
   await insertContractAddressInDb(eContractid.StakedAave, stakedAaveProxy.address);
 
-  const peiEncodedInitialize = aaveIncentivesControllerImplementation.interface.encodeFunctionData(
-    'initialize'
-  );
-  await aaveIncentivesControllerProxy['initialize(address,address,bytes)'](
-    aaveIncentivesControllerImplementation.address,
-    proxyAdmin,
-    peiEncodedInitialize
-  );
-  await waitForTx(
-    await aaveToken
-      .connect(vaultOfRewards)
-      .approve(aaveIncentivesControllerProxy.address, MAX_UINT_AMOUNT)
-  );
-  await insertContractAddressInDb(
-    eContractid.AaveIncentivesController,
-    aaveIncentivesControllerProxy.address
-  );
+  // const peiEncodedInitialize = aaveIncentivesControllerImplementation.interface.encodeFunctionData(
+  //   'initialize'
+  // );
+  // await aaveIncentivesControllerProxy['initialize(address,address,bytes)'](
+  //   aaveIncentivesControllerImplementation.address,
+  //   proxyAdmin,
+  //   peiEncodedInitialize
+  // );
+  // await waitForTx(
+  //   await aaveToken
+  //     .connect(vaultOfRewards)
+  //     .approve(aaveIncentivesControllerProxy.address, MAX_UINT_AMOUNT)
+  // );
+  // await insertContractAddressInDb(
+  //   eContractid.AaveIncentivesController,
+  //   aaveIncentivesControllerProxy.address
+  // );
 
   return {
-    aaveIncentivesControllerProxy,
+    //aaveIncentivesControllerProxy,
     stakedAaveProxy,
   };
 };
@@ -116,23 +116,23 @@ export const testDeployAaveStakeV2 = async (
     restWallets
   );
 
-  const stakedAaveImpl = await deployStakedAaveV2([
-    stakedToken,
-    rewardsToken,
-    COOLDOWN_SECONDS,
-    UNSTAKE_WINDOW,
-    vaultOfRewardsAddress,
-    emissionManager,
-    (1000 * 60 * 60).toString(),
-  ]);
+  // const stakedAaveImpl = await deployStakedAaveV2([
+  //   stakedToken,
+  //   rewardsToken,
+  //   COOLDOWN_SECONDS,
+  //   UNSTAKE_WINDOW,
+  //   vaultOfRewardsAddress,
+  //   emissionManager,
+  //   (1000 * 60 * 60).toString(),
+  // ]);
 
-  const stakedAaveEncodedInitialize = stakedAaveImpl.interface.encodeFunctionData('initialize');
+  // const stakedAaveEncodedInitialize = stakedAaveImpl.interface.encodeFunctionData('initialize');
 
-  await stakedAaveProxy
-    .connect(restWallets[0])
-    .upgradeToAndCall(stakedAaveImpl.address, stakedAaveEncodedInitialize);
+  // await stakedAaveProxy
+  //   .connect(restWallets[0])
+  //   .upgradeToAndCall(stakedAaveImpl.address, stakedAaveEncodedInitialize);
 
-  await insertContractAddressInDb(eContractid.StakedAaveV2, stakedAaveProxy.address);
+  //await insertContractAddressInDb(eContractid.StakedAaveV2, stakedAaveProxy.address);
 
   return {
     stakedAaveProxy,
